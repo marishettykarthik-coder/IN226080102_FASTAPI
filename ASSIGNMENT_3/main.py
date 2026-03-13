@@ -64,7 +64,7 @@ def add_product(product: Product):
 
 
 # INVENTORY AUDIT ENDPOINT
-# must be above /products/{product_id}
+
 
 @app.get("/products/audit")
 def inventory_audit():
@@ -101,7 +101,7 @@ def inventory_audit():
 
 
 # BONUS - CATEGORY DISCOUNT
-# must be above /products/{product_id}
+
 
 @app.put("/products/discount")
 def apply_discount(category: str, discount_percent: int):
@@ -184,7 +184,7 @@ def delete_product(product_id: int):
     )
 
 
-# GET PRODUCT BY ID (always last)
+# GET PRODUCT BY ID 
 
 @app.get("/products/{product_id}")
 def get_product(product_id: int):
@@ -196,4 +196,5 @@ def get_product(product_id: int):
     raise HTTPException(
         status_code=404,
         detail="Product not found"
+
     )
